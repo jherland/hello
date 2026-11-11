@@ -1,0 +1,13 @@
+name: Build
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    uses: nixbuild/nixbuild-action/.github/workflows/ci-workflow.yml@v27
+    secrets:
+      nixbuild_token: ${{ secrets.nixbuild_token }}
+    # Optional: build both checks and packages (defaults to checks)
+    with:
+      filter_builds: '.top_attr == "checks" or .top_attr == "packages"'
