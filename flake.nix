@@ -22,7 +22,7 @@
         inherit (pkgs) hello;
 
 	hello-fail = pkgs.hello.overrideAttrs (_: {
-	  postInstall = "exit 1";
+	  postInstall = "exit 0";
 	});
       });
   };
