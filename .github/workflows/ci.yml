@@ -13,4 +13,4 @@ jobs:
         with:
           nixbuild_token: ${{ secrets.nixbuild_token }}
           generate_summary_for: "job"
-      - run: nix build
+      - run: nix flake check
